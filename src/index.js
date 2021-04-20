@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import logo from "./gj.jpg";
 import App from "./App";
 
 import store from "./store/";
+
+import "./static/iconfont/iconfont.css"
 
 import { Provider } from "react-redux";
 
