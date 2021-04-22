@@ -1,10 +1,11 @@
 import ContextPage from "./pages/demoPage/ContextPage";
+import MyRCFieldForm from "./pages/demoPage/MyRCFieldForm";
 
 
 function App() {
   return (
     <div className="App">
-     <ContextPage/>
+     <MyRCFieldForm/>
     </div>
   );
 }

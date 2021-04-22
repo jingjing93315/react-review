@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ThemeContext } from "../../Context";
+import { ThemeContext, ThemeConsumer } from "../../Context";
 import UserPage from "./UserPage";
 
 class HomePage extends Component {
@@ -10,6 +10,9 @@ class HomePage extends Component {
       // <Layout showTopBar={false} showBottomBar={true} title="商城首页">
       <div>
         <h3 className={themeColor}>HomePage</h3>
+        <ThemeConsumer>
+          {ThemeContext => <div className={ThemeContext.themeColor}>一线蓝光</div>}
+        </ThemeConsumer>
         <UserPage/>
       </div>
       /* {{
