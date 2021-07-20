@@ -24,3 +24,4 @@
 2. learning
 
 - React组件化
+- Redux、中间件的使用及源码

@@ -6,8 +6,9 @@ import App from "./App";
 import store from "./store/";
 
 import "./static/iconfont/iconfont.css"
+// import { Provider } from "react-redux";
+import { Provider } from "./gReactRedux";
 
-import { Provider } from "react-redux";
 
 ReactDOM.render(
   <Provider store={store}>

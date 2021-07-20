@@ -1,32 +1,23 @@
-import React, { useState, useEffect } from "react";
-
+import React, {  useEffect, useReducer } from "react";
+import {counterReducer} from '../../store'
+// 修改初始值
+const init = initArg => initArg - 0
 export default function HookPage(props) {
   // 定义一个count的state变量，初始化为0
-  const [count, setCount] = useState(0);
-  const [date, setDate] = useState(new Date());
-  useEffect(
-    () => {
-      console.log("count effect");
-      // count只需要在count发生改变的时候执行
-      document.title = `点击了${count}次`;
-    },
-    [count]
-  );
-  useEffect(() => {
-    console.log("date effect");
-    // timer 只需要didMount时候执行
-    const timer = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-    // 清除定时器 willUnmount
-    return  ()=> clearInterval(timer)
-  }, []);
+  // const [count, setCount] = useState(0);
+  // const [date, setDate] = useState(new Date());
+  // 为啥用中括号， 方便自定义命名
+  const [state, dispatch] = useReducer(counterReducer,"0", init)
+
+  useEffect(()=>{
+    // console.log()
+  },[state])
   return (
     <div>
       <h3>HookPage</h3>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>add</button>
-      <p>{date.toLocaleTimeString()}</p>
+      <p>{state}</p>
+      <button onClick={() => dispatch({type: 'ADD',payload: 100})}>add</button>
+      {/* <p>{date.toLocaleTimeString()}</p> */}
     </div>
   );
 }

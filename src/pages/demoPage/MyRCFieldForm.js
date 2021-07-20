@@ -43,7 +43,7 @@ export default function MyRCFieldForm(props) {
 //   formRef = React.createRef();
 //   componentDidMount() {
 //     console.log("form", this.formRef.current);
-//     this.formRef.current.setFieldsValue({ username: "default" });
+//     this.formRef.current.setFieldValue({ username: "default" });
 //   }
 //   onFinish = (val) => {
 //     console.log("onFinish", val);

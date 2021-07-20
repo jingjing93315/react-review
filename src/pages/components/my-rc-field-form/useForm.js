@@ -87,11 +87,17 @@ class FormStore {
   };
 }
 // 自定义hook
-export default function useForm() {
+export default function useForm(form) {
   const formRef = React.useRef();
   if (!formRef.current) {
-    const formStore = new FormStore();
-    formRef.current = formStore.getForm();
+    if(form){
+      // 实现复用
+      formRef.current = form
+    }else {
+      const formStore = new FormStore();
+      formRef.current = formStore.getForm();
+    }
+   
   }
 
   return [formRef.current];
